@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Medilag Counseling Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Navbar -->
+  <header class="flex items-center justify-between px-4 py-3 bg-white shadow-md">
+    <div class="text-xl font-bold text-blue-700">Medilag Counseling Hub</div>
+    <div x-data="{ open: false }" class="relative">
+      <button @click="open = !open" class="focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-20">
+        <a href="index.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Home</a>
+        <a href="about.html" class="block px-4 py-2 text-sm hover:bg-gray-100">About</a>
+        <a href="faq.html" class="block px-4 py-2 text-sm hover:bg-gray-100">FAQ</a>
+        <a href="resources.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Resources</a>
+        <a href="chat.html" class="block px-4 py-2 text-sm hover:bg-gray-100">AI Chatbot</a>
+        <a href="checkin.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Daily Check-In</a>
+        <a href="submit.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Anonymous Form</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSelOxU9Y1zaV7Vhd1NnxQ5v4jwFF2Ue82Tu3Sdu1gwZi7bnqQ/viewform?usp=sharing" class="block px-4 py-2 text-sm hover:bg-gray-100">Book a Session</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Who We Are with Background Image -->
+  <section class="relative h-72 bg-cover bg-center" style="background-image: url('assets/images/edusana1.png');">
+    <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white text-center px-4">
+      <h1 class="text-4xl md:text-5xl font-extrabold">Who We Are</h1>
+      <p class="mt-2 text-lg">Compassionate support for Medilag students, by Medilag students.</p>
+    </div>
+  </section>
+
+  <!-- About Content Section -->
+  <section class="max-w-5xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-semibold text-blue-700 mb-4">Our Mission</h2>
+    <p class="mb-6 text-gray-700 leading-relaxed">
+      Medilag Counseling Hub is a student-led initiative designed to help fellow students at the College of Medicine, University of Lagos. We know what it means to be under academic pressure, to feel isolated, anxious, or overwhelmed. That’s why we’ve built a space where students can talk, decompress, and find help that actually feels human.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mb-4">What We Offer</h2>
+    <ul class="list-disc ml-6 text-gray-700 space-y-2">
+      <li>Peer-to-peer counseling and guidance</li>
+      <li>Anonymous support submissions</li>
+      <li>Daily mood check-ins and wellness tips</li>
+      <li>AI-assisted chat for self-help and interaction</li>
+      <li>Helpful mental health resources and readings</li>
+      <li>Group or individual counseling referrals</li>
+    </ul>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-10 mb-4">Team EduSanare</h2>
+    <p class="text-gray-700 mb-6">
+      EduSanare is the student team behind this project, passionate about emotional well-being, mental health advocacy, and using technology to support young minds. We believe students can — and should — help each other thrive.
+    </p>
+
+    <!-- Team Image -->
+    <div class="flex justify-center">
+      <img 
+        src="assets/images/human4.png" 
+        alt="Team EduSanare" 
+        class="rounded-lg shadow-md w-full max-w-lg hover:scale-105 transition-transform duration-300 ease-in-out"
+      />
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-800 text-white text-center py-6">
+    <p>&copy; 2025 Medilag Counseling Hub. All rights reserved.</p>
+    <p class="text-sm mt-1"><marquee>Powered by <strong>EduSanare</strong></marquee></p>
+  </footer>
+<!-- Floating Chatbot Bubble with Bounce -->
+<a href="chat.html"
+   class="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg z-50 animate-bounce transition">
+  💬
+</a>
+</body>
+</html>

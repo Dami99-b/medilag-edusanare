@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medilag Counseling Hub</title>
+    <link rel="icon" type="image/png" href="/assets/images/medilag-logo.png" />
+    
+    
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  
+</head>
+<body class="bg-gray-50 text-gray-800 relative">
+  <!-- Navbar with Dropdown -->
+  <header class="flex items-center justify-between px-4 py-3 bg-white shadow-md">
+    <div style="display: flex; align-items: center; gap: 10px;">
+    <img src="assets/images/medilag-logo.png" alt="Medilag Logo" style="height: 40px;">
+    <span style="font-size: 20px; font-weight: bold; color: #1a3d8f;">Medilag Counseling Hub</span>
+    </div>
+    <div x-data="{ open: false }" class="relative">
+      <button @click="open = !open" class="focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-20">
+        <a href="about.html" class="block px-4 py-2 text-sm hover:bg-gray-100">About</a>
+        <a href="faq.html" class="block px-4 py-2 text-sm hover:bg-gray-100">FAQ</a>
+        <a href="resources.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Resources</a>
+        <a href="chat.html" class="block px-4 py-2 text-sm hover:bg-gray-100">AI Chatbot</a>
+        <a href="checkin.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Daily Check-In</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfzanFLp_NOryTN5K8RxqS2yEnbfXMPVUHpLcktY0gnLk6yVg/viewform?usp=sharing&ouid=111516010311261865975" class="block px-4 py-2 text-sm hover:bg-gray-100">Anonymous Form</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSelOxU9Y1zaV7Vhd1NnxQ5v4jwFF2Ue82Tu3Sdu1gwZi7bnqQ/viewform?usp=sharing&ouid=111516010311261865975" class="block px-4 py-2 text-sm hover:bg-gray-100">Book a Session</a>
+      </div>
+    </div>
+  </header>  <!-- Floating Chatbot Bubble -->  <a href="chat.html" class="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg z-50">
+    💬
+  </a>  <!-- Hero Section -->  <section class="bg-blue-100 py-16 px-6 text-center">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-800">Welcome to Medilag Counseling Hub</h1>
+    <p class="mt-4 text-lg text-blue-700">Your mental well-being, our top priority.</p>
+  </section>  
+<!-- Slideshow / Carousel Section -->
+<section class="relative w-full max-w-4xl mx-auto mt-10 overflow-hidden rounded-xl shadow-lg" 
+         x-data="{ 
+           activeSlide: 0, 
+           slides: [
+             { image: 'assets/images/counseling.png', quote: '“Your mind deserves peace.”' },
+             { image: 'assets/images/counselingt.png', quote: '“We’re here to listen and help.”' },
+             { image: 'assets/images/counselingy.png', quote: '“Mental wellness is a journey.”' }
+           ] 
+         }" 
+         x-init="setInterval(() => activeSlide = (activeSlide + 1) % slides.length, 5000)">
+  <div class="relative h-64 sm:h-80 md:h-96">
+    <template x-for="(slide, index) in slides" :key="index">
+      <div 
+        x-show="activeSlide === index" 
+        class="absolute inset-0 transition-opacity duration-700 ease-in-out"
+        x-transition:enter="transition-opacity ease-out duration-700"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition-opacity ease-in duration-500"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+      >
+        <img :src="slide.image" class="w-full h-full object-cover" alt="Slideshow image" />
+        <div class="absolute bottom-6 left-0 right-0 px-6 text-center">
+          <p class="text-white text-lg md:text-xl font-semibold bg-black bg-opacity-50 py-2 rounded">
+            <span x-text="slide.quote"></span>
+          </p>
+        </div>
+      </div>
+    </template>
+  </div>
+
+  <!-- Slide Indicators -->
+  <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+    <template x-for="(slide, index) in slides" :key="index">
+      <button 
+        @click="activeSlide = index"
+        :class="{'bg-white': activeSlide === index, 'bg-gray-400': activeSlide !== index}"
+        class="w-3 h-3 rounded-full transition duration-300"
+      ></button>
+    </template>
+  </div>
+</section>
+      
+    </div>
+  </section>  <!-- Interactive Teasers -->  <section class="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 py-10">
+    <a href="faq.html" class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      <h2 class="text-xl font-semibold text-blue-700">Have Questions?</h2>
+      <p class="mt-2 text-gray-600">Explore our Frequently Asked Questions with real student concerns.</p>
+    </a>
+    <a href="resources.html" class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      <h2 class="text-xl font-semibold text-blue-700">Explore Resources</h2>
+      <p class="mt-2 text-gray-600">Books, articles, and tools to support your emotional growth.</p>
+    </a>
+  </section>  <!-- More Sections -->  <section class="bg-gray-100 py-12 px-6">
+    <div class="max-w-5xl mx-auto grid gap-8 md:grid-cols-3">
+      <div>
+        <h3 class="font-bold text-lg text-blue-700">Student Voices</h3>
+        <p class="text-sm text-gray-600 mt-2">Real stories from Medilag students who overcame stress, loneliness, and more.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg text-blue-700">Relax & Recharge</h3>
+        <p class="text-sm text-gray-600 mt-2">Breathe. Meditate. Take a mindful break and come back stronger.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg text-blue-700">Weekly Wellness Tip</h3>
+        <p class="text-sm text-gray-600 mt-2">"Connect with someone you trust this week. Talk it out."</p>
+      </div>
+    </div>
+  </section>  <!-- Footer -->  <footer class="bg-blue-800 text-white text-center py-6 mt-12">
+    <p>&copy; 2025 Medilag Counseling Hub. All rights reserved.</p>
+    <p class="text-sm mt-1"><marquee>Powered by <strong>EduSanare</strong></marquee></p>
+  </footer>
+</body>
+</html></marquee></p>
+  </footer>
+</body>
+</html>

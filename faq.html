@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ - Medilag Counseling Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <header class="flex items-center justify-between px-4 py-3 bg-white shadow-md">
+    <div class="text-xl font-bold text-blue-700">Medilag Counseling Hub</div>
+    <div x-data="{ open: false }" class="relative">
+      <button @click="open = !open" class="focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+     <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-20">
+     <a href="index.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Home</a>
+     <a href="about.html" class="block px-4 py-2 text-sm hover:bg-gray-100">About</a>
+     <a href="resources.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Resources</a>
+     <a href="chat.html" class="block px-4 py-2 text-sm hover:bg-gray-100">AI Chatbot</a>
+     <a href="checkin.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Daily Check-In</a>
+     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfzanFLp_NOryTN5K8RxqS2yEnbfXMPVUHpLcktY0gnLk6yVg/viewform?usp=sharing&ouid=111516010311261865975" class="block px-4 py-2 text-sm hover:bg-gray-100">Anonymous Form</a>
+     <a href="https://docs.google.com/forms/d/e/1FAIpQLSelOxU9Y1zaV7Vhd1NnxQ5v4jwFF2Ue82Tu3Sdu1gwZi7bnqQ/viewform?usp=sharing&ouid=111516010311261865975" class="block px-4 py-2 text-sm hover:bg-gray-100">Book a Session</a>
+     </div>
+    </div>
+    
+  </header> 
+   <main class="max-w-4xl mx-auto px-6 py-10">
+    <h1 class="text-3xl font-extrabold text-blue-800 mb-6">Frequently Asked Questions</h1>
+    <div class="space-y-4">
+      <div x-data="{ open: false }" class="border rounded-md p-4 shadow">
+        <button @click="open = !open" class="text-left w-full font-semibold text-blue-700">How can I book a session with a counselor?</button>
+        <p x-show="open" class="mt-2 text-gray-700">You can book a session through our <a href="https://docs.google.com/forms/d/e/1FAIpQLSelOxU9Y1zaV7Vhd1NnxQ5v4jwFF2Ue82Tu3Sdu1gwZi7bnqQ/viewform?usp=sharing" class="text-blue-500 underline">booking form</a>. Our team will get back to you shortly.</p>
+      </div>
+      <div x-data="{ open: false }" class="border rounded-md p-4 shadow">
+        <button @click="open = !open" class="text-left w-full font-semibold text-blue-700">Is the counseling service confidential?</button>
+        <p x-show="open" class="mt-2 text-gray-700">Yes, all sessions are completely confidential and follow strict privacy policies.</p>
+      </div>
+      <div x-data="{ open: false }" class="border rounded-md p-4 shadow">
+        <button @click="open = !open" class="text-left w-full font-semibold text-blue-700">Are there any costs involved?</button>
+        <p x-show="open" class="mt-2 text-gray-700">No, our counseling services are free for all Medilag students.</p>
+      </div>
+      <div x-data="{ open: false }" class="border rounded-md p-4 shadow">
+        <button @click="open = !open" class="text-left w-full font-semibold text-blue-700">Can I submit a concern anonymously?</button>
+        <p x-show="open" class="mt-2 text-gray-700">Yes. Use our <a href="https://docs.google.com/forms/d/e/1FAIpQLSfzanFLp_NOryTN5K8RxqS2yEnbfXMPVUHpLcktY0gnLk6yVg/viewform?usp=sharing" class="text-blue-500 underline">anonymous form</a> to share anything privately.</p>
+      </div>
+      <div x-data="{ open: false }" class="border rounded-md p-4 shadow">
+        <button @click="open = !open" class="text-left w-full font-semibold text-blue-700">Who runs EduSanare?</button>
+        <p x-show="open" class="mt-2 text-gray-700">EduSanare is a student-led team collaborating with Medilag's counseling unit to improve mental health accessibility.</p>
+      </div>
+    </div>
+  </main> 
+    <footer class="bg-blue-800 text-white text-center py-6 mt-12">
+    <p>&copy; 2025 Medilag Counseling Hub. All rights reserved.</p>
+    <p class="text-sm mt-1"><marquee>Powered by <strong>EduSanare</strong></p></marquee>
+  </footer>
+  <!-- Floating Chatbot Bubble with Bounce -->
+  <a href="chat.html"
+  class="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg z-50 animate-bounce transition">
+  💬
+  </a>
+</body>
+</html>
